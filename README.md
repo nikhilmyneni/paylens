@@ -4,7 +4,7 @@ PayLens turns a compensation discrepancy into a reviewable decision. It compares
 
 Built for the YottaFlex compensation-disparity hackathon using synthetic employees only.
 
-**Verification:** 28 backend tests and 10 subtests pass locally; one PostgreSQL-specific test awaits a database. The frontend production build and desktop/mobile browser checks pass. [Test coverage and commands](docs/testing.md).
+**Verification:** 29 backend tests and 10 subtests pass locally; the PostgreSQL integration checks also pass in GitHub CI. The frontend production build and desktop/mobile browser checks pass. [Test coverage and commands](docs/testing.md).
 
 **Recorded full-scale evaluation:** 5,000 employees, 200 role/level combinations and 180,000 monthly salary records. The synthetic baseline yielded 81 true positives, 31 false positives and no false negatives: 72.32% precision, 100% recall and 83.94% F1. These are labelled-scenario results, not evidence of real-world fairness. [Evaluation details](docs/evaluation.md).
 
@@ -76,7 +76,7 @@ python backend/validation.py --database-url sqlite:///./compensation-full.db
 python backend/evaluation.py --database-url sqlite:///./compensation-full.db --data-dir data/generated/full --output data/generated/full-evaluation.json
 ```
 
-Exports include CSV/JSON tables, SQL seed data, separate ground truth, source manifest, validation summary and checksums. Generated data and databases are excluded from Git; the generator recreates them. [Reproducibility procedure](docs/testing.md#generated-data-validation-and-reproducibility).
+Exports include CSV/JSON tables, SQL seed data, separate ground truth, source manifest, validation summary and checksums. Generated source datasets and databases are excluded from Git; the generator recreates them. Two small evaluation files (manifest and separate labels) are bundled for the hosted synthetic snapshot; they are never detector inputs. [Reproducibility procedure](docs/testing.md#generated-data-validation-and-reproducibility).
 
 ## Tests and reviewer guide
 

@@ -33,3 +33,8 @@ Useful Design Guidelines & Resource.txt
 .agents/
 .codex/
 *.log
+
+# Keep only the small evaluator manifest and labels needed by the hosted demo.
+backend/evaluation_data/*
+!backend/evaluation_data/manifest.json
+!backend/evaluation_data/ground_truth.json

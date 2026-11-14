@@ -1,0 +1,488 @@
+[
+  {
+    "target_id": "EMP-000001",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-000002",
+    "issue_type": "expired_band_used",
+    "expected_decision": "exception",
+    "reason": "Injected faulty source decision"
+  },
+  {
+    "target_id": "EMP-000003",
+    "issue_type": "fte_ignored",
+    "expected_decision": "exception",
+    "reason": "Injected faulty source decision"
+  },
+  {
+    "target_id": "EMP-000004",
+    "issue_type": "missing_fx",
+    "expected_decision": "exception",
+    "reason": "Injected faulty source decision"
+  },
+  {
+    "target_id": "EMP-000005",
+    "issue_type": "incomparable_group",
+    "expected_decision": "exception",
+    "reason": "Injected faulty source decision"
+  },
+  {
+    "target_id": "EMP-000006",
+    "issue_type": "unapproved_adjustment",
+    "expected_decision": "exception",
+    "reason": "Source applied a draft proposal without approval"
+  },
+  {
+    "target_id": "EMP-000067",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-000133",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-000199",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-000265",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-000331",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-000397",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-000463",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-000529",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-000595",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-000661",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-000727",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-000793",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-000859",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-000925",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-000991",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-001057",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-001123",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-001189",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-001255",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-001321",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-001387",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-001453",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-001519",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-001585",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-001651",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-001717",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-001783",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-001849",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-001915",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-001981",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-002047",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-002113",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-002179",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-002245",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-002311",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-002377",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-002443",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-002509",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-002575",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-002641",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-002707",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-002773",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-002839",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-002905",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-002971",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-003037",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-003103",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-003169",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-003235",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-003301",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-003367",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-003433",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-003499",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-003565",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-003631",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-003697",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-003763",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-003829",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-003895",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-003961",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-004027",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-004093",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-004159",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-004225",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-004291",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-004357",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-004423",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-004489",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-004555",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-004621",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-004687",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-004753",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-004819",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-004885",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  },
+  {
+    "target_id": "EMP-004951",
+    "issue_type": "unexplained_gap",
+    "expected_decision": "review",
+    "reason": "2026 pay set to 80% of band midpoint despite documented rating 4"
+  }
+]

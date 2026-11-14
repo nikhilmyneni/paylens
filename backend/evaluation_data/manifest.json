@@ -1,0 +1,81 @@
+{
+  "seed": 20261022,
+  "scale": "full",
+  "employees": 5000,
+  "as_of": "2026-12-01",
+  "tables": {
+    "role": {
+      "rows": 20,
+      "sha256": "fb3ebed0247c8c9c4619ad1942ce3f276b178da242b5fcfcec584033d342a89f"
+    },
+    "level": {
+      "rows": 10,
+      "sha256": "eaa271860d41057c060e4c0ba366ce2dcc66b667ff7d2fa93dbce9561e2df33a"
+    },
+    "location": {
+      "rows": 3,
+      "sha256": "a9d3fb79bbd5536fdd685b6ca93307ef08983086a743cd634dea38a483343bcc"
+    },
+    "employee": {
+      "rows": 5000,
+      "sha256": "b67fb24384b21a8677df1fc99aab48e80a0e695fe0b7e5f0e93cc24cb7d1eeaa"
+    },
+    "employee_assignment": {
+      "rows": 5897,
+      "sha256": "b6b25ba60613cb5ee4fd10ec366a1a3270f38a1e364eef7d81e21ecca477d47b"
+    },
+    "compensation_band": {
+      "rows": 1800,
+      "sha256": "f187c319de77d262d20eb307f05e91d353c07edbc09e306efff37b92e9da7cdf"
+    },
+    "fx_rate": {
+      "rows": 9,
+      "sha256": "b6069f8697fb04e13e294387d9fef8c35a75b55d4717742190daeabbe22d7f4c"
+    },
+    "salary_record": {
+      "rows": 180000,
+      "sha256": "b92804faa9e12a68cd4d5d8e1686981df45f672dc5c9dfbf430ac6c97c6f4444"
+    },
+    "performance_evidence": {
+      "rows": 15000,
+      "sha256": "5c1e239bc922c1cdf2495b0bf34810372e47ad8b03159cd96fa0c8c0e3b7a357"
+    },
+    "tenure": {
+      "rows": 5000,
+      "sha256": "034aea9ab7295f30d66b9f17dc3d2863ce85ffe62ac0c9a197e72658e606acb1"
+    },
+    "promotion": {
+      "rows": 500,
+      "sha256": "4604e29db09a66b53b4b7460d43cb291619894cb7145d6e07e2223951399d7c6"
+    },
+    "analysis_run": {
+      "rows": 2,
+      "sha256": "c6b8d7dc32fb369966173e472648942ddae50a41e69fa1da8dfce1bb50295033"
+    },
+    "analysis_issue": {
+      "rows": 0,
+      "sha256": "767300b28972f09e1fee934891b90ceb1cf2322a637295884eae36e3cda0aa21"
+    },
+    "comparison_result": {
+      "rows": 10000,
+      "sha256": "538542e4525bb6f7d7d84679de326cd79889c0796ff79ce0f770717ec5da9afd"
+    },
+    "adjustment_proposal": {
+      "rows": 1,
+      "sha256": "a1dcf154a31c782beacaf2323288848a2a7c7aca52f2362e6a937648b14cc6d7"
+    },
+    "proposal_event": {
+      "rows": 1,
+      "sha256": "1a2fe4eaaf186c7d0896ba5cb1db17000c0e16ff708208aeb9682d8e8bc328ae"
+    },
+    "source_decision": {
+      "rows": 5,
+      "sha256": "5186635b074ac456f613fd358bf1e25606548977c31f1675a4ea1caa3edb9d48"
+    },
+    "id_counter": {
+      "rows": 0,
+      "sha256": "5d9d642ae50a8b50499bfca27585151dee9384f4ef78439a59be901c9e74973c"
+    }
+  },
+  "source": "fully synthetic; no external personal data"
+}
