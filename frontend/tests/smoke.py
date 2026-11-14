@@ -1,3 +1,4 @@
+import os
 import json
 from pathlib import Path
 from playwright.sync_api import sync_playwright, expect
@@ -5,13 +6,14 @@ from playwright.sync_api import sync_playwright, expect
 out = Path('frontend/.preview')
 out.mkdir(exist_ok=True)
 results = []
+expect.set_options(timeout=30000)
 with sync_playwright() as p:
     browser = p.chromium.launch()
     for width, height in [(1440, 960), (768, 1024), (390, 844)]:
         page = browser.new_page(viewport={"width": width, "height": height}, reduced_motion='reduce')
         errors = []
         page.on('pageerror', lambda error: errors.append(str(error)))
-        page.goto('http://127.0.0.1:5173', wait_until='networkidle')
+        page.goto(os.getenv('APP_URL', 'http://127.0.0.1:5173'), wait_until='networkidle')
         expect(page.locator('.employee-row').first).to_be_visible()
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), 'Horizontal overflow'
         page.locator('.rail-links button').filter(has_text='All').click()

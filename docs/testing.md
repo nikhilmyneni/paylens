@@ -31,7 +31,9 @@ python -m pip install pytest httpx
 python -m pytest backend/tests -q
 ```
 
-The latest local run passed 28 tests and 10 subtests; one PostgreSQL-specific test skipped because PostgreSQL was not available locally. CI runs the PostgreSQL guard test against its service database. Local success alone does not establish deployed PostgreSQL behavior.
+The latest local run passed 29 tests and 10 subtests; one PostgreSQL-specific test skipped locally. GitHub CI has passed that guard test against its service database. Local success alone does not establish deployed PostgreSQL behavior.
+
+The actual generator is also exercised by `test_generator.py`, with immediate foreign-key enforcement and a post-generation integrity check.
 
 ## Generated data validation and reproducibility
 

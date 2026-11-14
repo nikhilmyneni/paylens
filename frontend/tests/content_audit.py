@@ -1,7 +1,9 @@
+import os
 """Unsupported claims and exception-state display regressions."""
 import json
 from playwright.sync_api import sync_playwright, expect
 
+expect.set_options(timeout=30000)
 with sync_playwright() as p:
     browser = p.chromium.launch()
     page = browser.new_page(viewport={"width": 1440, "height": 960})
@@ -18,7 +20,7 @@ with sync_playwright() as p:
         body['total'] = 1
         route.fulfill(response=response, json=body)
     page.route('**/comparisons?**', missing_band)
-    page.goto('http://127.0.0.1:5173', wait_until='networkidle')
+    page.goto(os.getenv('APP_URL', 'http://127.0.0.1:5173'), wait_until='networkidle')
     expect(page.locator('.employee-row').first).to_be_visible()
     expect(page.get_by_role('button', name='Propose adjustment')).to_be_disabled()
     text = page.locator('body').inner_text()

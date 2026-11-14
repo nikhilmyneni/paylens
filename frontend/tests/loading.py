@@ -1,3 +1,4 @@
+import os
 import asyncio
 import json
 from playwright.async_api import async_playwright, expect
@@ -10,7 +11,7 @@ async def main():
             await asyncio.sleep(1.2)
             await route.continue_()
         await page.route('**/api/v1/**', slow)
-        await page.goto('http://127.0.0.1:5173', wait_until='domcontentloaded')
+        await page.goto(os.getenv('APP_URL', 'http://127.0.0.1:5173'), wait_until='domcontentloaded')
         await expect(page.locator('.list-skeleton').first).to_be_visible()
         await page.screenshot(path='frontend/.preview/fresh-loading.png')
         await expect(page.locator('.employee-row').first).to_be_visible(timeout=10000)

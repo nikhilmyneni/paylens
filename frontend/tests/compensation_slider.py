@@ -1,15 +1,17 @@
+import os
 """Verify proposal slider, exact entry and outgoing amount without writing data."""
 import json
 from playwright.sync_api import sync_playwright, expect
 
 results=[]
+expect.set_options(timeout=30000)
 with sync_playwright() as p:
     browser=p.chromium.launch()
     for theme,width in [('light',1440),('dark',390)]:
         page=browser.new_page(viewport={'width':width,'height':960},color_scheme=theme,reduced_motion='reduce')
         errors=[]
         page.on('pageerror',lambda error:errors.append(str(error)))
-        page.goto('http://127.0.0.1:5173',wait_until='networkidle')
+        page.goto(os.getenv('APP_URL', 'http://127.0.0.1:5173'),wait_until='networkidle')
         expect(page.locator('.employee-row').first).to_be_visible()
         page.locator('.employee-row').first.click()
         page.get_by_role('button',name='Propose adjustment').click()

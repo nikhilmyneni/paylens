@@ -19,3 +19,5 @@ The backend suite separately checks approval transitions, optimistic concurrency
 `content_audit.py` checks that unsupported live/sealed claims are absent, missing-band records do not claim successful matching or allow an adjustment, unknown currency does not crash rendering, and 1% coverage renders as 1.0%.
 
 `compensation_slider.py` checks keyboard and pointer adjustment, exact values, out-of-range entry, mobile layout and submitted amounts. Proposal requests are intercepted, so this test does not write to the database.
+
+To check the hosted demo instead, set `$env:APP_URL = "https://paylens-olive.vercel.app"` before running the browser scripts. Read-only smoke checks and the slider test can run without changing hosted records.

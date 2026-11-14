@@ -1,14 +1,16 @@
+import os
 """Theme preference, system tracking, persistence and reveal regression checks."""
 import json
 from playwright.sync_api import sync_playwright, expect
 
+expect.set_options(timeout=30000)
 with sync_playwright() as p:
     browser = p.chromium.launch()
     context = browser.new_context(viewport={"width": 1440, "height": 960}, color_scheme='dark')
     page = context.new_page()
     errors = []
     page.on('pageerror', lambda error: errors.append(str(error)))
-    page.goto('http://127.0.0.1:5173', wait_until='networkidle')
+    page.goto(os.getenv('APP_URL', 'http://127.0.0.1:5173'), wait_until='networkidle')
     expect(page.locator('html')).to_have_attribute('data-theme', 'dark')
     expect(page.locator('.employee-row').first).to_be_visible()
     page.screenshot(path='frontend/.preview/final-dark-desktop.png', full_page=True)
