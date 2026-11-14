@@ -1,0 +1,35 @@
+.env
+.env.*
+!.env.example
+!backend/.env.example
+!frontend/.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+node_modules/
+frontend/dist/
+.vercel/
+.skill-sources/
+*.db
+*.sqlite*
+data/generated/
+data/full-repeat/
+.coverage
+.DS_Store
+.runtime/
+.claude/settings.local.json
+
+
+# Local exports, design references and build caches
+data/
+review_tmp_data*/
+frontend/.preview/
+*.tsbuildinfo
+Screenshot*.png
+**/Screenshot*.png
+Useful Design Guidelines & Resource.txt
+.claude/
+.agents/
+.codex/
+*.log

@@ -1,0 +1,6 @@
+*.db
+*.sqlite*
+tests/
+__pycache__/
+.venv/
+Dockerfile

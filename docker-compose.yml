@@ -1,0 +1,79 @@
+services:
+  database:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-comp_review}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env; use scripts/start-three-tier.ps1}
+      POSTGRES_DB: ${POSTGRES_DB:-comp_review}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - data
+
+  initialize:
+    build: ./backend
+    command: ["python", "bootstrap.py", "--seed", "--output", "/app/seed-data"]
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-comp_review}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@database:5432/${POSTGRES_DB:-comp_review}
+      DEMO_MODE: ${DEMO_MODE:-true}
+    volumes:
+      - seeddata:/app/seed-data
+    networks:
+      - data
+    depends_on:
+      database:
+        condition: service_healthy
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-comp_review}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@database:5432/${POSTGRES_DB:-comp_review}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8080}
+      DEMO_MODE: ${DEMO_MODE:-true}
+      EVALUATION_DATA_DIR: /app/seed-data
+    volumes:
+      - seeddata:/app/seed-data:ro
+    depends_on:
+      initialize:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/ready', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+    networks:
+      - app
+      - data
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE_URL: /
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://127.0.0.1:8080/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+    ports:
+      - "127.0.0.1:8080:8080"
+    networks:
+      - app
+
+volumes:
+  pgdata:
+  seeddata:
+
+networks:
+  app:
+  data:
+    internal: true

@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_DB: comp_review
+          POSTGRES_USER: comp_review
+          POSTGRES_PASSWORD: ci_password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U comp_review -d comp_review"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: pip install -r backend/requirements.txt pytest httpx
+      - name: Run backend tests
+        working-directory: backend
+        run: pytest -q
+      - name: Generate and validate starter data in PostgreSQL
+        working-directory: backend
+        env:
+          DATABASE_URL: postgresql+psycopg://comp_review:ci_password@localhost:5432/comp_review
+        run: python generate.py --scale starter --database-url "$DATABASE_URL" --output ../data/generated/ci-postgres
+      - name: Migrate PostgreSQL and verify append-only history
+        working-directory: backend
+        env:
+          DATABASE_URL: postgresql+psycopg://comp_review:ci_password@localhost:5432/comp_review
+        run: |
+          python bootstrap.py
+          python -m pytest tests/test_migrations.py -q
+      - name: Check fixed-seed reproducibility
+        working-directory: backend
+        run: |
+          python generate.py --scale starter --database-url sqlite:///./ci-a.db --output ../data/generated/ci-a
+          python generate.py --scale starter --database-url sqlite:///./ci-b.db --output ../data/generated/ci-b
+          python -c "from validation import compare_exports; result = compare_exports('../data/generated/ci-a', '../data/generated/ci-b'); print(result); assert result['identical']"
+
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm ci --no-audit --no-fund
+      - name: Typecheck and build
+        working-directory: frontend
+        run: npm run build
