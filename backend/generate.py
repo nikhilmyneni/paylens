@@ -9,7 +9,7 @@ from collections import defaultdict
 from datetime import date, datetime, timezone
 from decimal import Decimal
 from pathlib import Path
-from sqlalchemy import create_engine, inspect, select, func
+from sqlalchemy import create_engine, event, inspect, select, func
 from sqlalchemy.schema import CreateTable
 from sqlalchemy.dialects import postgresql
 from sqlalchemy.orm import Session
@@ -41,6 +41,10 @@ def main():
     output = Path(args.output).resolve()
     output.mkdir(parents=True, exist_ok=True)
     engine = create_engine(normalize_database_url(args.database_url))
+    if engine.dialect.name == "sqlite":
+        @event.listens_for(engine, "connect")
+        def enforce_foreign_keys(connection, _):
+            connection.execute("PRAGMA foreign_keys=ON")
     existing = set(inspect(engine).get_table_names())
     if "employee" in existing:
         with Session(engine) as check_session:
@@ -73,7 +77,9 @@ def main():
     outliers = set(range(1, count+1, max(40, count//75)))
     truth = []
     with Session(engine) as db:
-        db.add_all(roles + levels + locs + bands + rates)
+        db.add_all(roles + levels + locs + rates)
+        db.flush()
+        db.add_all(bands)
         db.flush()
         for i in range(1, count+1):
             eid = f"EMP-{i:06d}"
@@ -125,7 +131,11 @@ def main():
                 salary.append(SalaryRecord(id=f"SAL-{eid}-{d.year}-{d.month:02d}", employee_id=eid, effective_month=d, monthly_amount=monthly_amount, currency=b.currency, event_kind="promotion" if cut == m and i%9==0 else "baseline"))
             if i in outliers:
                 truth.append({"target_id": eid, "issue_type":"unexplained_gap", "expected_decision":"review", "reason":"2026 pay set to 80% of band midpoint despite documented rating 4"})
-        db.add_all(employees + assignments + promotions + salary + performance + tenure)
+        db.add_all(employees)
+        db.flush()
+        db.add_all(assignments + salary + performance + tenure)
+        db.flush()
+        db.add_all(promotions)
         db.flush()
         source = []
         def decision(index, **kwargs):
