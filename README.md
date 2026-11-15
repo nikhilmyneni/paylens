@@ -8,7 +8,7 @@ Built for the YottaFlex compensation-disparity hackathon using synthetic employe
 
 **Recorded full-scale evaluation:** 5,000 employees, 200 role/level combinations and 180,000 monthly salary records. The synthetic baseline yielded 81 true positives, 31 false positives and no false negatives: 72.32% precision, 100% recall and 83.94% F1. These are labelled-scenario results, not evidence of real-world fairness. [Evaluation details](docs/evaluation.md).
 
-**Live demo:** [paylens-olive.vercel.app](https://paylens-olive.vercel.app) ? [API documentation](https://paylens-api.vercel.app/docs)
+**Live demo:** [paylens-olive.vercel.app](https://paylens-olive.vercel.app)  [API documentation](https://paylens-api.vercel.app/docs)
 
 The React frontend and FastAPI API deploy independently on Vercel; a dedicated Supabase PostgreSQL project persists the synthetic records and review history.
 
